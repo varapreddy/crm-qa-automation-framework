@@ -10,8 +10,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		},
 		tags = "@demo",
 		features = "src/test/resources/com/maximus/crm/features",
-		//glue = "com/maximus/crm/step_definitions",
-		dryRun= true
+		glue = "com/maximus/crm/step_definitions",
+		dryRun= false
 		)
 
 public class CukesRunner extends AbstractTestNGCucumberTests {
