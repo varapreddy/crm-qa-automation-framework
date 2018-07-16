@@ -11,7 +11,7 @@ public class DemoAmazonHomePage {
 
 	    private WebDriver driver;
 
-	    public DemoAmazonHomePage(WebDriver driver) {
+	    public DemoAmazonHomePage() {
 	    	this.driver = Driver.getDriver();
 	    	PageFactory.initElements(driver, this);
 	    }

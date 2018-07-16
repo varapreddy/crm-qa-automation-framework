@@ -1,35 +1,31 @@
 package com.maximus.crm.step_definitions;
 
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.maximus.crm.pages.DemoAmazonHomePage;
 import com.maximus.crm.utilities.ConfigurationReader;
+import com.maximus.crm.utilities.Driver;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DemoAmazonSearchStepDefs {
 
-	private WebDriver driver;
-	private DemoAmazonHomePage demoHomePage;
+	private WebDriver driver = Driver.getDriver();
+	private DemoAmazonHomePage demoHomePage = new DemoAmazonHomePage ();
 	private String keyword;
 	
 	
 
 @Given("^I am on amazon home page$")
 public void i_am_on_amazon_home_page() {
-    WebDriverManager.chromedriver().setup();
-    driver = new ChromeDriver();
-    
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    System.out.println(ConfigurationReader.getProperty("url"));
     driver.get(ConfigurationReader.getProperty("url"));
     assertTrue(driver.getTitle().startsWith("Amazon.com"));
 
@@ -38,7 +34,6 @@ public void i_am_on_amazon_home_page() {
 @Given("^I search for (.*)$")
 public void i_search_for(String keyword) {
     this.keyword = keyword;
- demoHomePage = new DemoAmazonHomePage (driver);
     demoHomePage.searchBox.sendKeys(keyword + Keys.ENTER);
     System.out.println("Searching for "+ keyword);
 }
