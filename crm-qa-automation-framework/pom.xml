@@ -5,10 +5,10 @@
 	<groupId>com.maximus</groupId>
 	<artifactId>crm-qa-automation-framework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<properties>
-	   <mavencompiler.source>1.8</mavencompiler.source>
-	   <mavencompiler.target>1.8</mavencompiler.target>
+		<mavencompiler.source>1.8</mavencompiler.source>
+		<mavencompiler.target>1.8</mavencompiler.target>
 	</properties>
 
 	<dependencies>
@@ -117,6 +117,16 @@
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+
 			<plugin>
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
