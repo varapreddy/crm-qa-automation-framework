@@ -17,32 +17,28 @@ import cucumber.api.java.en.Then;
 public class DemoAmazonSearchStepDefs {
 
 	private WebDriver driver = Driver.getDriver();
-	private DemoAmazonHomePage demoHomePage = new DemoAmazonHomePage ();
+	private DemoAmazonHomePage demoHomePage = new DemoAmazonHomePage();
 	private String keyword;
-	
-	
 
-@Given("^I am on amazon home page$")
-public void i_am_on_amazon_home_page() {
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    System.out.println(ConfigurationReader.getProperty("url"));
-    driver.get(ConfigurationReader.getProperty("url"));
-    assertTrue(driver.getTitle().startsWith("Amazon.com"));
+	@Given("^I am on amazon home page$")
+	public void i_am_on_amazon_home_page() {
+		driver.get(ConfigurationReader.getProperty("url"));
+		assertTrue(driver.getTitle().startsWith("Amazon.com"));
 
-}
+	}
 
-@Given("^I search for (.*)$")
-public void i_search_for(String keyword) {
-    this.keyword = keyword;
-    demoHomePage.searchBox.sendKeys(keyword + Keys.ENTER);
-    System.out.println("Searching for "+ keyword);
-}
+	@Given("^I search for (.*)$")
+	public void i_search_for(String keyword) {
+		this.keyword = keyword;
+		demoHomePage.searchBox.sendKeys(keyword + Keys.ENTER);
+		System.out.println("Searching for " + keyword);
+	}
 
-@Then("^Search result should be displayed$")
-public void search_result_should_be_displayed() {
-	assertTrue(driver.getTitle().endsWith(keyword));
-	driver.quit();
-   
-}
-	
+	@Then("^Search result should be displayed$")
+	public void search_result_should_be_displayed() {
+		assertTrue(driver.getTitle().endsWith(keyword));
+		driver.quit();
+
+	}
+
 }

@@ -1,5 +1,6 @@
 package com.maximus.crm.runners;
 
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
@@ -9,7 +10,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				"json:target/cucumber.json"
 		},
 		tags = "@demo",
-		features = "src/test/resources/com/maximus/crm/features",
+		features = {"src/test/resources/com/maximus/crm/features"},
 		glue = "com/maximus/crm/step_definitions",
 		dryRun= false
 		)
