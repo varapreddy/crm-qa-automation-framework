@@ -2,8 +2,6 @@ package com.maximus.crm.step_definitions;
 
 import static org.testng.Assert.assertTrue;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
