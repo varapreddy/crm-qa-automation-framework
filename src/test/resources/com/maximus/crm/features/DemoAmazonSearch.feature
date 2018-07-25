@@ -5,7 +5,7 @@ Feature: Cucumber TestNG Demo Feature
     @regression
      @smokeSomeField
   Scenario: Amazon search
-    Given I am on amazon home page
+    Given I am on Aamazon home page
     And I search for <iphone charger>
     Then Search result should be displayed
 @demo @test
