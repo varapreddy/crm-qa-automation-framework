@@ -35,8 +35,6 @@ public class DemoAmazonSearchStepDefs {
 	@Then("^Search result should be displayed$")
 	public void search_result_should_be_displayed() {
 		assertTrue(driver.getTitle().endsWith(keyword));
-		driver.quit();
-
 	}
 
 }
