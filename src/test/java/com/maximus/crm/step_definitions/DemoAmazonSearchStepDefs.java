@@ -21,12 +21,13 @@ public class DemoAmazonSearchStepDefs {
 	@Given("^I am on amazon home page$")
 	public void i_am_on_amazon_home_page() {
 		driver.get(ConfigurationReader.getProperty("url"));
-		assertTrue(driver.getTitle().startsWith("Amazon.com"));
+		assertTrue(driver.getTitle().startsWith("Amazonvara.com"));
 
 	}
 
 	@Given("^I search for (.*)$")
 	public void i_search_for(String keyword) {
+		keyword="vara";
 		this.keyword = keyword;
 		demoHomePage.searchBox.sendKeys(keyword + Keys.ENTER);
 		System.out.println("Searching for " + keyword);
